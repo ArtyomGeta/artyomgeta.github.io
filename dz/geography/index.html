@@ -21,6 +21,9 @@ window.addEventListener('error', function(e) {
           } else {
           }
      }
+          function open1() {
+              window.open("1/Протвино.html", "_self");
+          }
       </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
@@ -50,11 +53,10 @@ window.addEventListener('error', function(e) {
         
         div.block {
             color: black;
-            margin-left: 150pt;
-            margin-right: 150pt;
             padding-left: 100pt;
             padding-right: 100pt;
             padding: 10pt;
+            width: 70%;
             margin-top: 5pt;
             margin-bottom: 20pt;
             border: 1pt solid black;
@@ -94,7 +96,7 @@ window.addEventListener('error', function(e) {
         <a class="nav-link" href="#">Биография</a>
       </li>-->
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Биография</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Биография <span class="badge badge-secondary">New</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Домашние задания</a>
@@ -120,11 +122,18 @@ window.addEventListener('error', function(e) {
     <h1>Сайт, посвещённый Артёму Гета.</h1>
     <p class="lead"></p>
   </div>
-</main><!-- /.container -->--><br><br><br><br><br>
-      <center><div class="block">
-          <h2>Темы:</h2>
-          <a class="links" href="1/%D0%9F%D1%80%D0%BE%D1%82%D0%B2%D0%B8%D0%BD%D0%BE.html">Протвино - наукоград</a>
-          </div></center>
+</main><!-- /.container -->--><br><br><br>
+      
+    <div class="border vh-100 mb-8 shadow rounded d-flex flex-column align-items-center mx-4 p-5">
+            <div style="font: 150% Arial">Темы:</div>
+        <hr style="width: 50%; color: gainsboro; height: 0.01%; background-color:gainsboro;" />
+        <div class="list-group w-100">
+  <button type="button" class="list-group-item list-group-item-action text-center" onclick="javascript:open1()">
+    Протвино - наукоград
+  </button>
+        </div>
+    </div>
+      
       
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
