@@ -21,6 +21,9 @@ window.addEventListener('error', function(e) {
           } else {
           }
      }
+          function open1() {
+              window.open("1/Griboedov.html", "_self");
+          }
       </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
@@ -118,9 +121,9 @@ window.addEventListener('error', function(e) {
             <div style="font: 150% Arial">Темы:</div>
         <hr style="width: 50%; color: gainsboro; height: 0.01%; background-color:gainsboro;" />
         <div class="list-group w-100">
-            <div class="alert alert-primary text-center" role="alert">
-  Тут пусто...
-</div>
+            <button type="button" class="list-group-item list-group-item-action text-center" onclick="javascript:open1()">
+    Грибоедов
+  </button>
         </div>
     </div>
       
