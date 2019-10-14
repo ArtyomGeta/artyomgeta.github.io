@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Биография</title>
-      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
       <script type="text/javascript">
 window.addEventListener('error', function(e) {
     console.log(e);
@@ -21,6 +21,9 @@ window.addEventListener('error', function(e) {
           } else {
           }
      }
+    function closeThis() {
+        window.close();
+    }
       </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
@@ -78,9 +81,9 @@ window.addEventListener('error', function(e) {
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <img src="../images/favicon.jpg" width="40pt" height="40pt" onblur="true">
+        <img src="images/favicon.jpg" width="40pt" height="40pt" onblur="true">
         &nbsp;&nbsp;&nbsp;
-  <a class="navbar-brand" href="../index.html">Артём Гета</a>
+  <a class="navbar-brand" href="index.html">Артём Гета</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -93,7 +96,7 @@ window.addEventListener('error', function(e) {
       <li class="nav-item">
         <a class="nav-link" href="biography/index.html">Биография <span class="sr-only">(current)</span></a>
       </li>
-        <li class="nav-item"> <a class="nav-link" href="index.html">Проекты</a></li>
+        <li class="nav-item"> <a class="nav-link" href="projects/index.html">Проекты</a></li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Домашние задания</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -120,21 +123,22 @@ window.addEventListener('error', function(e) {
   </div>
 </main><!-- /.container -->--><br><br><br>
       <div class="border vh-100 mb-8 shadow rounded d-flex flex-column align-items-center mx-4 p-2">
-            <div style="font: 150% Arial">Проекты:</div>
+            <div style="font: 150% Arial">Сообщение</div>
         <hr style="width: 50%; color: gainsboro; height: 0.01%; background-color:gainsboro;" />
         <div class="list-group w-100">
             <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
+    <label for="exampleInputEmail1">Электронный адрес</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <label for="exampleFormControlTextarea1">Сообщение</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   
-  <button type="submit" class="btn btn-primary">Отправить</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="mailto:artmgeta@gmail.com">
+  Отправить
+</button>
 </form>
         </div>
       <!--      <a class="btn btn-info" href="#">Button</a>
@@ -144,5 +148,26 @@ window.addEventListener('error', function(e) {
     </div>
       
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Отправлено!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Ваше сообщение было отправлено.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:closeThis()">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
 </html>
