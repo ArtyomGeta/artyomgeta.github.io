@@ -1,0 +1,12 @@
+a {
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
