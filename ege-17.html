@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <title>ЕГЭ информатика задание №17 Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="prism.css" rel="stylesheet" />
+  <script src="prism.js"></script>
+  <style>
+    .page-item { width: 150% }
+  </style>
+</head>
+<body class="line-numbers">
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" style="background-color: #bdff6f; color:  #0d6efd" href="tips.html">Советы</a></li>
+  <li class="page-item"><a class="page-link disabled">1</a></li>
+  <li class="page-item"><a class="page-link " href="ege-2.html">2</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">3</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">4</a></li>
+  <li class="page-item"><a class="page-link " href="ege-5.html">5</a></li>
+  <li class="page-item"><a class="page-link" href="ege-6.html">6</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">7</a></li>
+  <li class="page-item"><a class="page-link " href="ege-8.html">8</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">9</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">10</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">11</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">12</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">13</a></li>
+  <li class="page-item"><a class="page-link " href="ege-14.html">14</a></li>
+  <li class="page-item"><a class="page-link " href="ege-15.html">15</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">16</a></li>
+  <li class="page-item"><a class="page-link active" href="ege-17.html">17</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">18</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">19</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">20</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">21</a></li>
+  <li class="page-item"><a class="page-link" href="ege-22.html">22</a></li>
+  <li class="page-item"><a class="page-link " href="ege-23.html">23</a></li>
+  <li class="page-item"><a class="page-link " href="ege-24.html">24</a></li>
+  <li class="page-item"><a class="page-link " href="ege-25.html">25</a></li>
+  <li class="page-item"><a class="page-link " href="ege-26.html">26</a></li>
+  <li class="page-item"><a class="page-link " href="ege-27.html">27</a></li>
+</ul>
+<h2 style="text-align: center">№17</h2>
+  <div class="d-flex justify-content-center mt-5 p-2 m-2 shadow rounded">
+  <div class="row">
+    <div class="col-lg-6 col-sm-4">
+      <table style="border: 2px solid #358ccb">
+        <tr><td>
+          <b>В файле содержится последовательность из 10000 целых положительных чисел. Каждое число не превышает 10000. Определите и запишите в ответе сначала количество пар элементов последовательности, у которых сумма элементов кратна 80 и хотя бы один элемент из пары делится на 50, затем максимальную из сумм элементов таких пар. В данной задаче под парой подразумевается два различных элемента последовательности. Порядок элементов в паре не важен.</b><br>
+          <i>Источник: <a href="https://inf-ege.sdamgia.ru/problem?id=37362">ссылка</a></i>
+        <tr><td>
+      </table><br>
+      <p>Для решения этой задачи нам необходимо прочитать файл. Инициализируем 2 переменные для количества и максимальной суммы соответственно и начинаем перебирать пары. Проверяем каждую на выполнение условия.</p>
+      <i>Рекомендую взять всё условие в скобки. Также нужно научиться различать типы пар. В 17-х встречаются разные виды пар:<br><ul><li>Идущие друг за другом последовательно</li><li>Все возможные пары</li></ul>В данном конкретном случае у нас второй вид пар, так как есть пояснение “в данной задаче под парой подразумевается два различных элемента последовательности”. Необходимо запомнить границы перебора для обоих циклов! На сайте РЕШУЕГЭ даны решения, где для первого и второго числа в паре не вводили отдельные переменные (у меня они называются a и b). Я рекомендую их всё-таки ввести, потому что это повышает читабельность кода и ускоряет его написание.<br>Также вот такие задания, где нужно перебрать все комбинации, могут долго вычисляться. Конкретно это у меня посчиталось мгновенно, но так бывает не всегда. Оно вполне может считать целую минуту!</i>
+    </div>
+    <div class="col-lg-6 col-sm-4">
+      <pre><code class="language-python">#Задание 17
+#Открываем файл
+f = open(r"/home/artyom/Downloads/17.txt", 'r', encoding="utf-8")
+#Заполняем массив ЦЕЛЫМИ из каждой строки
+mas = [int(i) for i in f.readlines()]
+f.close() #Закрываем open
+
+k = mx = 0
+#Перебираем все возможные пары элементов в файле
+for i in range(len(mas) - 1):
+    for j in range(i + 1, len(mas)):
+        a = mas[i] #Первое число в паре
+        b = mas[j] #Второе число в паре
+
+        if (((a + b) % 80 == 0) and (a % 50 == 0 or b % 50 == 0)):
+            k += 1
+            mx = max(mx, a + b)
+print(k, mx)
+</code></pre>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+
+<head>
+  <title>ЕГЭ информатика задание №26 Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="prism.css" rel="stylesheet" />
+  <script src="prism.js"></script>
+  <style>
+    .page-item { width: 150% }
+  </style>
+</head>
+<body class="line-numbers">
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" style="background-color: #bdff6f; color:  #0d6efd" href="tips.html">Советы</a></li>
+  <li class="page-item"><a class="page-link disabled">1</a></li>
+  <li class="page-item"><a class="page-link " href="ege-2.html">2</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">3</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">4</a></li>
+  <li class="page-item"><a class="page-link " href="ege-5.html">5</a></li>
+  <li class="page-item"><a class="page-link " href="ege-6.html">6</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">7</a></li>
+  <li class="page-item"><a class="page-link " href="ege-8.html">8</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">9</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">10</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">11</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">12</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">13</a></li>
+  <li class="page-item"><a class="page-link " href="ege-14.html">14</a></li>
+  <li class="page-item"><a class="page-link " href="ege-15.html">15</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">16</a></li>
+  <li class="page-item"><a class="page-link " href="ege-17.html">17</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">18</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">19</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">20</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">21</a></li>
+  <li class="page-item"><a class="page-link " href="ege-22.html">22</a></li>
+  <li class="page-item"><a class="page-link " href="ege-23.html">23</a></li>
+  <li class="page-item"><a class="page-link " href="ege-24.html">24</a></li>
+  <li class="page-item"><a class="page-link " href="ege-25.html">25</a></li>
+  <li class="page-item"><a class="page-link active" href="ege-26.html">26</a></li>
+  <li class="page-item"><a class="page-link " href="ege-27.html">27</a></li>
+</ul>
+<h2 style="text-align: center">№26</h2>
+  <div class="d-flex justify-content-center mt-5 p-2 m-2 shadow rounded">
+  <div class="row">
+    <div class="col-lg-6 col-sm-4">
+      <row>
+        <table style="border: 2px solid #358ccb">
+          <tr><td>
+            <b>Системный администратор раз в неделю создаёт архив пользовательских файлов. Однако объём диска, куда он помещает архив, может быть меньше, чем суммарный объём архивируемых файлов. Известно, какой объём занимает файл каждого пользователя. По заданной информации об объёме файлов пользователей и свободном объёме на архивном диске определите максимальное число пользователей, чьи файлы можно сохранить в архиве, а также максимальный размер имеющегося файла, который может быть сохранён в архиве, при условии, что сохранены файлы максимально возможного числа пользователей. <br>Входные данные:<br>В первой строке входного файла находятся два числа: S— размер свободного места на диске (натуральное число, не превышающее 10 000) и N— количество пользователей (натуральное число, не превышающее 4000). В следующих N строках находятся значения объёмов файлов каждого пользователя (все числа натуральные, не превышающие 100), каждое в отдельной строке.<br>Запишите в ответе два числа: сначала наибольшее число пользователей, чьи файлы могут быть помещены в архив, затем максимальный размер имеющегося файла, который может быть сохранён в архиве, при условии, что сохранены файлы максимально возможного числа пользователей.</b><br>
+            <i>Источник: <a href="https://inf-ege.sdamgia.ru/problem?id=27884">ссылка</a></i>
+          <tr><td>
+        </table><br>
+        <p>В решении этой задачи мы сначала записываем свободное место в переменную, а затем сортируем массив с файлами по возрастанию. Начинаем заполнять массив пока место не закончится (оно гарантированно закончится раньше).<br> “Подводный камень” этой задачи заключается в том, что нужно сохранить наибольший размер файла, который можно сохранить при условии, что количество пользователей сохранится. Так как после записи последнего файла у нас останется некоторое место, кторое слишком мало, чтобы записать в него следующий. Тогда мы выкидываем из массива последний сохранённый файл и следующим массивом бежим от того, который мы выкинули, до того файла, размер которого не превысит свободное место. Он и будет самым большим при том, что количество пользователей, файлы которых удалось записать, останется прежним.
+        </p>
+      </row>
+      <row>
+      <img src="1.png">
+      <i></i>
+      </row>
+    </div>
+    <div class="col-lg-6 col-sm-4">
+      <pre><code class="language-python">#Задание 26
+#Читаем файл
+f = open(r"/home/artyom/Downloads/26.txt", "r", encoding="utf-8")
+mas = f.readlines()
+f.close()
+
+#Свободное место записано первым числом
+#в первой строке (числа разделяет пробел)
+free = int(mas[0].split(" ")[0])
+#Выбрасываем эту первую строчку и
+#перезаполняем массив уже ЦЕЛЫМИ
+mas = [int(i) for i in mas[1:]]
+mas.sort() #Сортируем
+
+#Кол-во пользователей
+i = 0
+#Файл последнего пользователя
+last = 0
+while True:
+    #Если размер файла меньше свободного места
+    if free > mas[i]:
+        free -= mas[i]
+        i += 1
+    else:
+        free += mas[i]
+        last = mas[i]
+        break
+
+print(i) #вывод кол-во пользователей
+#Бежим от того последнего файла
+for j in range(last, len(mas)):
+    #Если наткнулись на файл, который больше, чем осталось места
+    if free < mas[j]:
+        print(mas[j - 1]) #Сохраняем предыдущий
+        break
+</code></pre>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

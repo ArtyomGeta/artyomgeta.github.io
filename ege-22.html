@@ -1,0 +1,90 @@
+<html>
+
+<head>
+  <title>ЕГЭ информатика задание №22 Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="prism.css" rel="stylesheet" />
+  <script src="prism.js"></script>
+  <style>
+    .page-item { width: 150% }
+  </style>
+</head>
+<body class="line-numbers">
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" style="background-color: #bdff6f; color:  #0d6efd" href="tips.html">Советы</a></li>
+  <li class="page-item"><a class="page-link disabled">1</a></li>
+  <li class="page-item"><a class="page-link " href="ege-2.html">2</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">3</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">4</a></li>
+  <li class="page-item"><a class="page-link " href="ege-5.html">5</a></li>
+  <li class="page-item"><a class="page-link" href="ege-6.html">6</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">7</a></li>
+  <li class="page-item"><a class="page-link " href="ege-8.html">8</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">9</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">10</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">11</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">12</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">13</a></li>
+  <li class="page-item"><a class="page-link " href="ege-14.html">14</a></li>
+  <li class="page-item"><a class="page-link " href="ege-15.html">15</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">16</a></li>
+  <li class="page-item"><a class="page-link" href="ege-17.html">17</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">18</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">19</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">20</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">21</a></li>
+  <li class="page-item"><a class="page-link active" href="#">22</a></li>
+  <li class="page-item"><a class="page-link " href="ege-23.html">23</a></li>
+  <li class="page-item"><a class="page-link " href="ege-24.html">24</a></li>
+  <li class="page-item"><a class="page-link " href="ege-25.html">25</a></li>
+  <li class="page-item"><a class="page-link " href="ege-26.html">26</a></li>
+  <li class="page-item"><a class="page-link " href="ege-27.html">27</a></li>
+</ul>
+<h2 style="text-align: center">№22</h2>
+  <div class="d-flex justify-content-center mt-5 p-2 m-2 shadow rounded">
+  <div class="row">
+    <div class="col-lg-6 col-sm-4">
+      <table style="border: 2px solid #358ccb">
+        <tr><td>
+          <b>Ниже на 5-ти языках записан алгоритм. Получив на вход число x, этот алгоритм печатает два числа a и b. Укажите наибольшее из таких чисел x, при вводе которых алгоритм напечатает сначала 2, а потом 14.</b><br>
+          <i>Источник: <a href="https://inf-ege.sdamgia.ru/problem?id=3508">ссылка</a></i>
+        <tr><td>
+      </table><br>
+      <p>Перебираем все x и проверяем a и b на соответствие необходимым значениям.</p>
+      <i>Рекомендую не исправлть везде x на i, а просто добавить строку <code>x = i</code>, ведь это упростит перепроверку.</i>
+    </div>
+    <div class="col-lg-6 col-sm-4">
+        <div class="row">
+      <pre><code class="language-python">#Дано
+x = int(input())
+a = 0
+b = 1
+while x > 0:
+    a += 1
+    b *= x % 10
+    x = x // 10
+print(a)
+print(b)
+</code></pre>
+        </div>
+        <div class="row">
+                  <pre><code class="language-python">#Задание 22
+for i in range(1000):
+    x = i
+    a = 0
+    b = 1
+    while x > 0:
+        a += 1
+        b *= x % 10
+        x = x // 10
+    if a == 2 and b == 14:
+        print(i)
+</code></pre>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

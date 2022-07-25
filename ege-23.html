@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title>ЕГЭ информатика задание №23 Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="prism.css" rel="stylesheet" />
+  <script src="prism.js"></script>
+  <style>
+    .page-item { width: 150% }
+  </style>
+</head>
+<body class="line-numbers">
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" style="background-color: #bdff6f; color:  #0d6efd" href="tips.html">Советы</a></li>
+  <li class="page-item"><a class="page-link disabled">1</a></li>
+  <li class="page-item"><a class="page-link " href="ege-2.html">2</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">3</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">4</a></li>
+  <li class="page-item"><a class="page-link " href="ege-5.html">5</a></li>
+  <li class="page-item"><a class="page-link" href="ege-6.html">6</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">7</a></li>
+  <li class="page-item"><a class="page-link " href="ege-8.html">8</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">9</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">10</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">11</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">12</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">13</a></li>
+  <li class="page-item"><a class="page-link " href="ege-14.html">14</a></li>
+  <li class="page-item"><a class="page-link " href="ege-15.html">15</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">16</a></li>
+  <li class="page-item"><a class="page-link " href="ege-17.html">17</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">18</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">19</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">20</a></li>
+  <li class="page-item"><a class="page-link disabled" href="#">21</a></li>
+  <li class="page-item"><a class="page-link" href="ege-22.html">22</a></li>
+  <li class="page-item"><a class="page-link active" href="ege-23.html">23</a></li>
+  <li class="page-item"><a class="page-link " href="ege-24.html">24</a></li>
+  <li class="page-item"><a class="page-link " href="ege-25.html">25</a></li>
+  <li class="page-item"><a class="page-link " href="ege-26.html">26</a></li>
+  <li class="page-item"><a class="page-link " href="ege-27.html">27</a></li>
+</ul>
+<h2 style="text-align: center">№23</h2>
+  <div class="d-flex justify-content-center mt-5 p-2 m-2 shadow rounded">
+  <div class="row">
+    <div class="col-lg-6 col-sm-4">
+      <table style="border: 2px solid #358ccb">
+        <tr><td>
+          <b>Исполнитель Удвоитель преобразует число на экране. У исполнителя есть две команды, которым присвоены номера:<ol><li>Прибавить 1</li><li>Умножить на 2</li></ol>Первая команда увеличивает число на экране на 1, вторая умножает его на 2. Программа для исполнителя Удвоитель— это последовательность команд. Сколько существует программ, для которых при исходном числе 3 результатом является число 25 и при этом траектория вычислений содержит число 11 и не содержит числа 20? Траектория вычислений программы— это последовательность результатов выполнения всех команд программы.</b><br>
+          <i>Источник: <a href="https://inf-ege.sdamgia.ru/problem?id=10485">ссылка</a></i>
+        <tr><td>
+      </table><br>
+      <p>Все типы этого задания решаются одинаково: мы создаём рекурсивную функцию с 3-я условиями.<ol><li>Если перепрыгнули результат (а так как у нас нет ни одной команды, которая как либо уменьшает это число, поэтому перешагнуть результат уже неправильно) или наткнулись на число, которое траектория не допускает, то возвращаем 0, потому что такой программы нет!</li><li>Если попали идеально в необходимое число, то возвращаем 1, потому что одна такая программа нашлась.</li><li>Во всех остальных случаях (то есть те, когда мы ещё меньше нужного нам числа) вызываем эту же функцию.</li></ol> Так как нам необходимо, чтобы траектория вычислений содержала 11, мы вызываем функцию “от 3 до 11 и от 11 до 25”.</p>
+      <i>Необходимо запомнить, что в самой функции (строка 11) между двумя вызовами мы пишем плюс (функции возвращают числа, поэтому с ними можно легко проводить математические операции), а в итоговом старте программы (строка 13) мы пишем умножение.</i>
+    </div>
+    <div class="col-lg-6 col-sm-4">
+      <pre><code class="language-python">#Задание 23
+def f(x, res):
+    #Если мы ушли дальше, чем рузультат или наткнулись на 20
+    if x > res or x == 20:
+        return 0
+    #Если мы наткнулись на результат
+    elif x == res:
+        return 1
+    #Все остальные случаи
+    else:
+        return f(x + 1, res) + f(x * 2, res)
+
+print(f(3, 11) * f(11, 25))
+</code></pre>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
